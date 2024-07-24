@@ -1,4 +1,5 @@
 import React from 'react'
+import ThemeBtn from './ThemeBtn'
 
 const Navbar = () => {
   return (
@@ -11,6 +12,7 @@ const Navbar = () => {
                 <p>Work</p>
                 <p>About</p>
                 <p>Contact</p>
+                <ThemeBtn/>
             </div>
         </div>
     </div>
