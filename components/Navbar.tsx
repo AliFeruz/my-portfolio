@@ -1,23 +1,53 @@
 import React, { useState } from 'react'
 import { Bars3BottomRightIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import useMediaQuery from '@/hooks';
+import { SelectedPage } from '@/types';
+import Link from '@/lib/Link';
 
-const Navbar = () => {
+
+type Props = {
+  selectedPage: SelectedPage;
+  setSelectedPage: (value: SelectedPage) => void;
+}
+
+
+const Navbar = ({ selectedPage, setSelectedPage }: Props) => {
   const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
   const isAboveMediumScreens = useMediaQuery('(min-width: 1060px)');
 
 
 
   return (
-    <nav className='flex fixed top-0 left-0 w-full h-[80px] items-center justify-center'>
+    <nav className='flex fixed top-0 left-0 w-full h-[90px] items-center justify-center'>
     {isAboveMediumScreens ? (
       <div className='px-16 py-16 sm:px-32 md:px-48 lg:px-60 w-full'>
-        <div className='h-[48px] flex justify-between items-center w-full px-8 rounded-[25px] bg-[#fff] flex-shrink-0'>
-          <p className='text-[#000] font-normal '>Ali Feruz</p>
+        <div className='h-[50px] flex justify-between items-center w-full px-8 rounded-[25px] bg-[#fff] flex-shrink-0'>
+        <Link  page="Home" 
+              selectedPage={selectedPage}
+              setSelectedPage={setSelectedPage}>
+              <span className='text-slate-900 font-semibold tracking-wider text-2xl'>Ali Feruz</span>
+              </Link>
           <div className='flex space-x-4'>
-            <p>Work</p>
-            <p>About</p>
-            <p>Contact</p>
+            <Link  page="Home" 
+              selectedPage={selectedPage}
+              setSelectedPage={setSelectedPage}>
+              <span className='uppercase text-slate-900 font-medium tracking-wider'>Home</span>
+              </Link>
+            <Link  page="About" 
+              selectedPage={selectedPage}
+              setSelectedPage={setSelectedPage}>
+              <span className='uppercase text-slate-900 font-medium tracking-wider'>About</span>
+              </Link>
+            <Link  page="Projects" 
+              selectedPage={selectedPage}
+              setSelectedPage={setSelectedPage}>
+              <span className='uppercase text-slate-900 font-medium tracking-wider'>Projects</span>
+              </Link>
+            <Link  page="Contact" 
+              selectedPage={selectedPage}
+              setSelectedPage={setSelectedPage}>
+                <span className='uppercase text-slate-900 font-medium tracking-wider'>Contact</span>
+              </Link>
           </div>
         </div>
       </div>
