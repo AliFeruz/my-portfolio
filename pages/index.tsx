@@ -1,13 +1,17 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import HeroSection from "@/components/HeroSection";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen items-center justify-center dark:bg-black">
-      <h1 className="uppercase text-blue-500">Hello world</h1>
+    <main className="bg-slate-100 dark:bg-slate-950 w-full h-full relative">
+       <Navbar/>
+       <HeroSection/>
+       <Footer/>
     </main>
   );
 }
