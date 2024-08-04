@@ -20,37 +20,34 @@ const Navbar = ({ selectedPage, setSelectedPage }: Props) => {
   return (
     <nav className='flex fixed top-0 left-0 w-full h-[90px] items-center justify-center'>
     {isAboveMediumScreens ? (
-      <div className='px-16 py-16 sm:px-32 md:px-48 lg:px-60 w-full'>
-        <div className='h-[50px] flex justify-between items-center w-full px-8 rounded-[25px] bg-[#fff] flex-shrink-0'>
-        <Link  page="Home" 
-              selectedPage={selectedPage}
-              setSelectedPage={setSelectedPage}>
-              <span className='text-slate-900 font-semibold tracking-wider text-2xl'>Ali Feruz</span>
-              </Link>
-          <div className='flex space-x-4'>
+        <div className='h-[50px] flex justify-between shadow-md backdrop-blur-sm items-center ring-1 ring-white/30 w-5/6 px-16 rounded-[25px] bg-[#0c0c0c]/30  text-white flex-shrink-0'>
+          <Link  page="Home" 
+          selectedPage={selectedPage}
+          setSelectedPage={setSelectedPage}>
+          <span className=' font-semibold tracking-wider text-2xl'>Ali Feruz</span>
+          </Link>
+          <div className='flex space-x-4 items-center'>
             <Link  page="Home" 
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}>
-              <span className='uppercase text-slate-900 font-medium tracking-wider'>Home</span>
+              <span className='uppercase font-medium tracking-wider'>Home</span>
               </Link>
             <Link  page="About" 
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}>
-              <span className='uppercase text-slate-900 font-medium tracking-wider'>About</span>
+              <span className='uppercase font-medium tracking-wider'>About</span>
               </Link>
             <Link  page="Projects" 
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}>
-              <span className='uppercase text-slate-900 font-medium tracking-wider'>Projects</span>
+              <span className='uppercase font-medium tracking-wider'>Projects</span>
               </Link>
-            <Link  page="Contact" 
-              selectedPage={selectedPage}
-              setSelectedPage={setSelectedPage}>
-                <span className='uppercase text-slate-900 font-medium tracking-wider'>Contact</span>
-              </Link>
+              <button className="flex items-center justify-center text-black rounded-3xl bg-[#00F255] px-3.5 py-1">
+                Get in touch
+              </button>
           </div>
         </div>
-      </div>
+      
     ) : (
       <div className='flex items-center justify-between w-full h-[80px] px-8'>
         <p className='text-gray-300'>Ali Feruz</p>

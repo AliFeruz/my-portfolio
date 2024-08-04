@@ -1,5 +1,3 @@
-import Image from "next/image";
-import { Inter } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
@@ -8,8 +6,9 @@ import { SelectedPage } from "@/types";
 import About from "@/components/About";
 import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
+import Services from "@/components/Services";
+import ValueSection from "@/components/ValueSection";
 
-const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(SelectedPage.Home);
@@ -26,13 +25,13 @@ export default function Home() {
   }, [])
 
   return (
-    <main className="bg-slate-200 w-full h-full">
+    <main className=" bg-white w-full h-full">
        <Navbar selectedPage={selectedPage} 
                setSelectedPage={setSelectedPage}/>
        <HeroSection setSelectedPage={setSelectedPage}/>
-       <About setSelectedPage={setSelectedPage}/>
        <Projects setSelectedPage={setSelectedPage}/>
-       <Contact setSelectedPage={setSelectedPage}/>
+       <Services/>
+       <ValueSection/>
        <Footer/>
     </main>
   );

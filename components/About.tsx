@@ -19,7 +19,7 @@ const About = ({ setSelectedPage }: Props) => {
 
   return (
     <div id='about' ref={refInView}
-    className="min-h-screen w-full flex items-center justify-center text-white">About</div>
+    className="min-h-screen w-full flex items-center bg-black justify-center text-white">About</div>
   )
 }
 
