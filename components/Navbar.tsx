@@ -3,6 +3,7 @@ import { Bars3BottomRightIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import useMediaQuery from '@/hooks';
 import { SelectedPage } from '@/types';
 import Link from '@/lib/Link';
+import Link1 from "next/link";
 
 
 type Props = {
@@ -18,31 +19,25 @@ const Navbar = ({ selectedPage, setSelectedPage }: Props) => {
 
 
   return (
-    <nav className='flex fixed top-0 left-0 w-full h-[90px] items-center justify-center'>
+    <nav className='flex fixed top-0 left-0 w-full h-[90px] items-center justify-center z-50'>
     {isAboveMediumScreens ? (
-        <div className='h-[50px] flex justify-between shadow-md backdrop-blur-sm items-center ring-1 ring-white/30 w-5/6 px-16 rounded-[25px] bg-[#0c0c0c]/30  text-white flex-shrink-0'>
+        <div className='h-[50px] flex justify-between shadow-md backdrop-blur-sm items-center ring-1 
+        ring-lightgreen/10 w-5/6 px-16 rounded-[25px] bg-[#0c0c0c]/40  text-black flex-shrink-0 z-50'>
           <Link  page="Home" 
           selectedPage={selectedPage}
           setSelectedPage={setSelectedPage}>
-          <span className=' font-semibold tracking-wider text-2xl'>Ali Feruz</span>
+          <span className=' font-semibold text-lightgreen tracking-wider text-2xl'>Ali Feruz</span>
           </Link>
-          <div className='flex space-x-4 items-center'>
+          <div className='flex space-x-4 items-center z-50'>
             <Link  page="Home" 
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}>
-              <span className='uppercase font-medium tracking-wider'>Home</span>
+              <span className='uppercase font-medium tracking-wide'>Home</span>
               </Link>
-            <Link  page="About" 
-              selectedPage={selectedPage}
-              setSelectedPage={setSelectedPage}>
-              <span className='uppercase font-medium tracking-wider'>About</span>
-              </Link>
-            <Link  page="Projects" 
-              selectedPage={selectedPage}
-              setSelectedPage={setSelectedPage}>
-              <span className='uppercase font-medium tracking-wider'>Projects</span>
-              </Link>
-              <button className="flex items-center justify-center text-black rounded-3xl bg-[#00F255] px-3.5 py-1">
+            <Link1 href="/projects" passHref>
+            <span className='uppercase font-medium tracking-wide'>Work&apos;s</span>
+            </Link1>
+              <button className="flex items-center text-sm justify-center text-black rounded-3xl bg-[#00F255] px-3.5 py-0.5">
                 Get in touch
               </button>
           </div>

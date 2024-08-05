@@ -38,9 +38,9 @@ const Services: React.FC = () => {
                     Your Vision, My Expertise <br />
                     Exceptional Results.
                 </h1>
-                <div className='grid grid-cols-2 mt-20 gap-10 w-2/3'>
+                <div className='grid grid-cols-2 mt-16 gap-10 w-2/3'>
                     {services.map((item, index) => (
-                        <div key={index} className='relative bg-darkgreen/5 rounded-lg'>
+                        <div key={index} className='relative bg-darkgreen/[3%] rounded-lg'>
                            <div className='flex items-center '>
                             <div className='border-l-2 border-black w-1 h-10'/>
                             <p className='text-2xl flex items-end justify-betweenfont-medium pl-5 leading-10 cursor-pointer'

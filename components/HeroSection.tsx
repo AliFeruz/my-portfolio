@@ -17,6 +17,7 @@ const HeroSection = ({ setSelectedPage }: Props) => {
       setSelectedPage(SelectedPage.Home);
     }
   }, [inView, setSelectedPage]);
+
   const handleCopy = () => {
     navigator.clipboard.writeText("aliferuzcode@gmail.com").then(() => {
       confetti({
@@ -39,22 +40,22 @@ const HeroSection = ({ setSelectedPage }: Props) => {
         <SparklesCore
           id="tsparticlesfullpage"
           background="transparent"
-          minSize={0.7}
-          maxSize={1.5}
+          minSize={1}
+          maxSize={3.5}
           particleDensity={110}
           className="w-full h-full"
-          particleColor="#001207"
+          particleColor="#00f255"
         />
       </div>
-      <h1 className="text-[#001207] text-6xl font-medium not-italic mt-[300px]">
+      <h1 className="text-[#001207] text-6xl font-medium not-italic mt-[250px] z-20 w-5/6 tracking-wide">
         Hi, I&apos;m Ali, a curious Full-Stack Web Developer with a keen eye for
         detail, passionate about frontend development and UI design.
       </h1>
-      <div className="flex mt-10  gap-9">
-      <button className="flex items-center justify-center w-60 text-black rounded-3xl bg-lightgreen px-5 py-2">
+      <div className="flex mt-14  gap-9 z-20">
+      <button className="flex items-center justify-center w-60 text-black rounded-3xl bg-lightgreen px-5 py-2 cursor-pointer">
         Get in touch
       </button>
-      <button onClick={handleCopy} className="flex items-center justify-center w-60 text-darkgreen border border-darkgreen/20 rounded-3xl px-5 py-2">
+      <button onClick={handleCopy} className="flex items-center justify-center w-60 text-darkgreen border border-darkgreen/30 rounded-3xl px-5 py-2 cursor-pointer">
         {copied ? "Email copied" : "Copy email"}
       </button>
       </div>

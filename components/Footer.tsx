@@ -35,7 +35,7 @@ const Footer = () => {
               Let&apos;s Build <br /> Something Together
             </p>
             <div className="flex gap-9 pt-9">
-              <button className="flex items-center justify-center w-60 text-black rounded-3xl bg-[#0BB246] px-5 py-2">
+              <button className="flex items-center justify-center w-60 text-black rounded-3xl bg-lightgreen px-5 py-2">
                 Get in touch
               </button>
               <button onClick={handleCopy} className="flex items-center justify-center w-60 text-gray-100 border border-gray-100 rounded-3xl px-5 py-2">
@@ -64,7 +64,7 @@ const Footer = () => {
               Let&apos;s Build <br /> Something Together
             </p>
             <div className="flex gap-9 pt-16">
-              <button className="flex items-center justify-center text-black rounded-3xl bg-[#0BB246] px-3 py-1 text-sm w-[8rem]">
+              <button className="flex items-center justify-center text-black rounded-3xl bg-lightgreen px-3 py-1 text-sm w-[8rem]">
                 Get in touch
               </button>
               <button onClick={handleCopy} className="flex items-center justify-center text-slate-300 border border-slate-300 rounded-3xl px-3 text-sm w-[8rem] py-1">
