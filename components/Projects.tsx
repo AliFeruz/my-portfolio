@@ -1,31 +1,16 @@
 import { projects } from "@/constants/data";
-import { SelectedPage } from "@/types";
-import Image from "next/image";
-import React, { useEffect } from "react";
-import { useInView } from "react-intersection-observer";
+import React from "react";
 import ProjectCard from "./ProjectCard";
 import Link from "next/link";
 import { ArrowLongRightIcon } from "@heroicons/react/24/outline";
 
-type Props = {
-  setSelectedPage: (value: SelectedPage) => void;
-};
 
-const Projects = ({ setSelectedPage }: Props) => {
-  const [refInView, inView] = useInView();
 
-  useEffect(() => {
-    if (inView) {
-      setSelectedPage(SelectedPage.Home);
-    }
-  }, [inView, setSelectedPage]);
+const Projects = () => {
 
+ 
   return (
-    <div
-      id="projects"
-      ref={refInView}
-      className="min-h-screen w-full flex bg-darkgreen"
-    >
+    <div className="min-h-screen w-full flex bg-darkgreen">
       <div className="px-8 sm:px-16 md:px-32 py-28 text-white">
         <h1 className="text-5xl">Select Work</h1>
         <div className="mt-12 grid grid-cols-1 gap-10 w-full">

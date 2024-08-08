@@ -26,7 +26,7 @@ const Footer = () => {
     <footer className="w-full bg-[#0c0c0c]">
       {isAboveMediumScreens ? (
         <div className="w-full h-[504px] relative flex">
-          <div className="absolute top-2 left-[305px]">
+          <div className="absolute top-0 left-[305px]">
             <Image src={Vector} alt="svg" className="w-full h-full" />
           </div>
           <div className="flex flex-col space-y-3 absolute top-10 left-20">

@@ -25,9 +25,9 @@ const Services: React.FC = () => {
 
     const toggleAccordion = (index: number) => {
         if (activeIndex === index) {
-            setActiveIndex(null); // Collapse the accordion if it's already open
+            setActiveIndex(null); 
         } else {
-            setActiveIndex(index); // Expand the clicked accordion item
+            setActiveIndex(index); 
         }
     };
 
@@ -40,13 +40,13 @@ const Services: React.FC = () => {
                 </h1>
                 <div className='grid grid-cols-2 mt-16 gap-10 w-2/3'>
                     {services.map((item, index) => (
-                        <div key={index} className='relative bg-darkgreen/[3%] rounded-lg'>
+                        <div key={index} className='relative bg-darkgreen/[3%] rounded-md'>
                            <div className='flex items-center '>
                             <div className='border-l-2 border-black w-1 h-10'/>
                             <p className='text-2xl flex items-end justify-betweenfont-medium pl-5 leading-10 cursor-pointer'
                                 onClick={() => toggleAccordion(index)}>{item.title}</p>
                             <ChevronDownIcon
-                                    className={`w-5 h-5 absolute bottom-2 right-1 transition-transform duration-300 ${activeIndex === index ? 'transform rotate-180' : ''}`}
+                                    className={`w-5 h-5 absolute bottom-2 right-2 transition-transform duration-300 ${activeIndex === index ? 'transform rotate-180' : ''}`}
                                     onClick={() => toggleAccordion(index)}
                                 />
                            </div>

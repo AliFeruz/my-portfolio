@@ -13,7 +13,7 @@ const strawford = localFont({
     },
     {
       path: '../fonts/strawford-medium.woff2',
-      weight: '400',
+      weight: '500',
       style: 'italic',
     },
     {
@@ -27,8 +27,10 @@ const strawford = localFont({
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-      <main className={strawford.className}>
+      <main className={`${strawford.className} relative bg-white`}>
+          <Navbar/>
           <Component {...pageProps} />
+          <Footer/>
       </main>
   );
 }
