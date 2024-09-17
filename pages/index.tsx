@@ -1,3 +1,4 @@
+import Benefits from "@/components/Benefits";
 import HeroSection from "@/components/HeroSection";
 import Projects from "@/components/Projects";
 import Services from "@/components/Services";
@@ -13,6 +14,7 @@ export default function Home() {
        <Projects />
        <Services/>
        <ValueSection/>
+       <Benefits/>
     </main>
   );
 }

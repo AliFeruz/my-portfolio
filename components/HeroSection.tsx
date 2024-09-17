@@ -1,56 +1,47 @@
-import React, { useState } from "react";
-import confetti from "canvas-confetti";
-import { SparklesCore } from "./ui/sparkles";
-
-
-
+import React from "react";
+import HeroImg from "@/public/heroimg.svg";
+import Image from "next/image";
 
 const HeroSection = () => {
-  const [copied, setCopied] = useState(false);
+  
+  const handleGetInTouch = () => {
+    const email = "aliferuzcode@gmail.com"; 
+    const subject = "Let's Connect!"; 
+    const body = "Hi Ali, I would like to get in touch with you."; 
+
+    const mailtoURL = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
   
-    
-
-  const handleCopy = () => {
-    navigator.clipboard.writeText("aliferuzcode@gmail.com").then(() => {
-      confetti({
-        particleCount: 100,
-        spread: 70,
-        origin: { y: 0.6 },
-      });
-      setCopied(true);
-      setTimeout(() => setCopied(false), 4000);
-    });
+    window.location.href = mailtoURL;
   };
 
   return (
-    <section className="min-h-screen flex items-end sm:px-16 md:px-32 relative">
-      <div className="w-full absolute inset-0 min-h-screen">
-        <SparklesCore
-          id="tsparticlesfullpage"
-          background="transparent"
-          minSize={1}
-          maxSize={5}
-          particleDensity={110}
-          className="w-full h-full"
-          particleColor={"#00f255"}
-        />
+    <section className="min-h-screen flex flex-col px-8 md:px-32 relative">
+      <Image
+        src={HeroImg}
+        alt="hero"
+        className="absolute bottom-0 right-0 w-auto h-auto"
+        priority
+      />
+      <div className="pt-[9.5rem]">
+        <h1 className="md:text-3xl text-xl font-semibold outline-black text-white  not-italic ">
+          Hi, I&apos;m Ali
+        </h1>
+        <h1 className="md:text-6xl text-4xl leading-[40px] font-medium text-start md:leading-[82px] not-italic md:pb-6 pb-2">
+          Building Future-Ready Products that Scale with Precision and
+          Creativity
+        </h1>
+        <p className="md:text-xl text-base">
+          From design to deployment, get seamless, high-performing<br/> web
+          solutions—all in one place.
+        </p>
       </div>
-      <h1 className="text-[#001207] text-6xl font-[500]  leading-[82px] not-italic z-20 w-4/6 pb-28">
-        Hi, I&apos;m <span className="text-[#24d261] font-semibold">Ali</span>, a curious Web Developer with a keen eye for
-        detail, passionate about frontend development and UX/UI design.
-      </h1>
-      {/* <div className="flex mt-14 gap-9 z-20">
-        <button className="flex items-center  justify-center  text-black rounded-3xl bg-lightgreen px-5 py-2 cursor-pointer">
+      <div className="flex md:mt-10 mt-6">
+        <button   onClick={handleGetInTouch}
+        className="flex items-center  justify-center  text-black rounded-3xl bg-lightgreen md:px-6 px-3 py-1 md:py-2 cursor-pointer">
           Get in touch
         </button>
-        <button
-          onClick={handleCopy}
-          className="flex items-center justify-center text-darkgreen border border-darkgreen/30 rounded-3xl px-5 py-2 cursor-pointer"
-        >
-          {copied ? "Email copied" : "Copy email"}
-        </button>
-      </div> */}
+      </div>
     </section>
   );
 };
