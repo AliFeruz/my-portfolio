@@ -35,12 +35,12 @@ const Footer = () => {
   return (
     <footer className="w-full bg-[#0c0c0c]">
       {isAboveMediumScreens ? (
-        <div className="w-full h-[504px] relative flex">
+        <div className="w-full container mx-auto h-[504px] relative flex">
           <div className="absolute top-0 left-[305px]">
             <Image src={Vector} alt="svg" className="w-full h-full" />
           </div>
           <div className="flex flex-col space-y-3 absolute top-10 left-20">
-            <p className="text-lime-500 pt-4">Ali Feruz</p>
+            <p className="text-lightgreen pt-4">Ali Feruz</p>
             <p className="text-5xl text-[#FFFFFF] pt-9">
               Let&apos;s Build <br /> Something Together
             </p>
@@ -94,7 +94,7 @@ const Footer = () => {
               </button>
               <button
                 onClick={handleCopy}
-                className="flex items-center gap-1 justify-center text-slate-300 border border-slate-300 rounded-3xl px-3 text-sm w-[8rem] py-1"
+                className="flex items-center gap-1 justify-center text-gray-100 border border-gray-100 rounded-3xl px-3 text-sm w-[8rem] py-1"
               >
                 {copied ? "Email copied" : "Copy email"}
                 {copied ? (
@@ -104,7 +104,7 @@ const Footer = () => {
                 )}
               </button>
             </div>
-            <div className="flex items-center justify-end gap-9 pt-10 px-8">
+            <div className="flex items-center justify-start gap-9 pt-10 px-3">
               <a href="https://github.com/aliferuz" target="_blank" rel="noreferrer">
                 <Image src={Github} alt="github" className="w-6 h-6 opacity-80" />
               </a>

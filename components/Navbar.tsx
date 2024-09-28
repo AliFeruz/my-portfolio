@@ -25,11 +25,11 @@ const Navbar = () => {
     <nav className='flex fixed top-0 left-0 w-full h-[80px] items-center justify-center z-50'>
     {isAboveMediumScreens ? (
         <div className='h-[50px] flex justify-between shadow-md backdrop-blur-sm items-center ring-1 
-        ring-darkgreen/20 w-5/6 px-16 rounded-[25px] bg-white/50  text-black flex-shrink-0 z-50'>
+        ring-darkgreen/20 w-4/6 px-16 rounded-[25px] bg-white/50  text-black flex-shrink-0 z-50'>
           <Link href={'/'} >
           <span className=' font-semibold tracking-wider text-2xl'>Ali Feruz</span>
           </Link>
-          <div className='flex space-x-4 items-center z-50'>
+          <div className='flex space-x-4 items-center justify-center z-50'>
             <Link href={'/'} >
               <span className='uppercase font-medium tracking-wide'>Home</span>
               </Link>
@@ -37,7 +37,7 @@ const Navbar = () => {
             <span className='uppercase font-medium tracking-wide'>Work&apos;s</span>
             </Link>
               <button onClick={handleGetInTouch}
-              className="flex items-center animate-pulse text-sm ring-1 ring-darkgreen/10 justify-center text-black rounded-3xl bg-[#00F255] px-3.5 py-0.5">
+              className="flex items-center text-xs animate-pulse ring-1 ring-darkgreen/10 justify-center text-black rounded-3xl bg-lightgreen px-3.5 py-1">
                 Get in touch
               </button>
           </div>
@@ -45,9 +45,11 @@ const Navbar = () => {
       
     ) : (
       <div className='flex items-center justify-between w-full h-[80px] px-8 shadow-md backdrop-blur-sm bg-white/30  text-black flex-shrink-0 z-50'>
-        <p className='text-2xl font-semibold'>Ali Feruz</p>
+        <Link href={'/'} >
+          <span className=' font-semibold tracking-wider text-2xl'>Ali Feruz</span>
+        </Link>
         <Bars3BottomRightIcon
-          className='cursor-pointer w-7 h-7'
+          className='cursor-pointer w-8 h-8'
           onClick={() => setIsMenuToggled(!isMenuToggled)}
         />
       </div>

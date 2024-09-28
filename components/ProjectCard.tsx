@@ -1,8 +1,10 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const ProjectCard = ({ item }: { item: any }) => {
   return (
+   <Link href={`/projects/project/${item.id}`} passHref>
     <div className="md:h-[584px] h-[384] flex flex-col items-start bg-[#D9D9D914]/[8%] hover:scale-105 ease-in duration-300 transition-all 
     ring-1 ring-lightgreen/20 rounded-lg md:p-8 p-4 shadow-lg shadow-lightgreen/[20%] backdrop-blur-md">
       <Image
@@ -15,6 +17,7 @@ const ProjectCard = ({ item }: { item: any }) => {
         {item.des}
       </p>
     </div>
+   </Link>
   );
 };
 

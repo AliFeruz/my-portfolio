@@ -1,49 +1,28 @@
-import React from "react";
-import HeroImg from "@/public/heroimg.svg";
-import Image from "next/image";
+import Image from 'next/image'
+import React from 'react'
+import benefits from '@/public/male-developer-working-on-website-development 1.svg'
+import { Square2StackIcon } from '@heroicons/react/24/outline'
 
-const HeroSection = () => {
-  
-  const handleGetInTouch = () => {
-    const email = "aliferuzcode@gmail.com"; 
-    const subject = "Let's Connect!"; 
-    const body = "Hi Ali, I would like to get in touch with you."; 
-
-    const mailtoURL = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-  
-    window.location.href = mailtoURL;
-  };
-
+const Benefits = () => {
   return (
-    <section className="min-h-screen flex flex-col px-8 md:px-32 relative">
-      <Image
-        src={HeroImg}
-        alt="hero"
-        className="absolute bottom-0 right-0 w-auto h-auto"
-        priority
-      />
-      <div className="pt-[9.5rem]">
-        <h1 className="md:text-3xl text-xl font-semibold outline-black text-white  not-italic ">
-          Hi, I&apos;m Ali
-        </h1>
-        <h1 className="md:text-6xl text-4xl leading-[40px] font-medium text-start md:leading-[82px] not-italic md:pb-6 pb-2">
-          Building Future-Ready Products that Scale with Precision and
-          Creativity
-        </h1>
-        <p className="md:text-xl text-base">
-          From design to deployment, get seamless, high-performing<br/> web
-          solutions—all in one place.
-        </p>
-      </div>
-      <div className="flex md:mt-10 mt-6">
-        <button   onClick={handleGetInTouch}
-        className="flex items-center  justify-center  text-black rounded-3xl bg-lightgreen md:px-6 px-3 py-1 md:py-2 cursor-pointer">
-          Get in touch
-        </button>
-      </div>
+    <section className='w-full min-h-[500px] bg-darkgreen flex-shrink-0'>
+        <div className='container mx-auto flex flex-col md:flex-row px-8 md:px-32 py-14 relative gap-10'>
+            <Image src={benefits} alt="benefits" className="md:w-1/3 md:h-1/3 w-2/3 h-2/3 ml-9 object-contain hover:scale-105 ease-in duration-300 transition-all"/>
+            <div className='flex flex-col justify-center md:w-1/2 ml-10'>
+            <h1 className='text-white text-start md:text-5xl text-3xl/[60px] not-italic font-medium'>
+            Why I Stand Out
+            </h1>
+            <div className='flex flex-col text-white items-start md:justify-start gap-4 mt-5 w-full'>
+            <p className='flex gap-4'><Square2StackIcon className='w-6 h-6 '/>Reliable and Dependable</p>
+            <p className='flex gap-4'><Square2StackIcon className='w-6 h-6 '/>Flexible and Adaptable</p>
+            <p className='flex gap-4'><Square2StackIcon className='w-6 h-6 '/>Commitment to Agreements</p>
+            <p className='flex gap-4'><Square2StackIcon className='w-6 h-6 '/>Modern & Future Proof </p>
+            
+            </div>
+            </div>
+        </div>
     </section>
-  );
-};
+  )
+}
 
-export default HeroSection;
+export default Benefits
